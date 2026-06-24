@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 200" role="img" fill="none">
+  <title>Rose Bud — half-open botanical rose bud with calyx and stem</title>
+  <defs>
+    <linearGradient id="rose-bud-petalOuter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset="0.4" stop-color="#F7C9D6"/>
+      <stop offset="0.78" stop-color="#E891A9"/>
+      <stop offset="1" stop-color="#D6336C"/>
+    </linearGradient>
+    <linearGradient id="rose-bud-petalMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCE3EA"/>
+      <stop offset="0.45" stop-color="#E891A9"/>
+      <stop offset="1" stop-color="#D6336C"/>
+    </linearGradient>
+    <radialGradient id="rose-bud-petalCore" cx="0.5" cy="0.78" r="0.9">
+      <stop offset="0" stop-color="#A61E4D"/>
+      <stop offset="0.5" stop-color="#D6336C"/>
+      <stop offset="1" stop-color="#E891A9"/>
+    </radialGradient>
+    <linearGradient id="rose-bud-wrapL" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset="0.45" stop-color="#F7C9D6"/>
+      <stop offset="1" stop-color="#D6336C"/>
+    </linearGradient>
+    <linearGradient id="rose-bud-wrapR" x1="0.9" y1="0" x2="0.1" y2="1">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset="0.45" stop-color="#F7C9D6"/>
+      <stop offset="1" stop-color="#D6336C"/>
+    </linearGradient>
+    <linearGradient id="rose-bud-calyx" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+    <linearGradient id="rose-bud-stem" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FA37E"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+    <linearGradient id="rose-bud-leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+  </defs>
+
+  <g class="stem">
+    <path d="M60 128 C59.4 148 59.2 168 60.2 190" stroke="url(#rose-bud-stem)" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M60 128 C59.4 148 59.2 168 60.2 190" stroke="#A9BD9C" stroke-width="0.8" stroke-linecap="round" opacity="0.6"/>
+    <g>
+      <path d="M59.6 158 C46 154.5 37.5 156.5 32 148 C42 143.5 53 145.5 59.6 154 Z" fill="url(#rose-bud-leaf)" stroke="#4A1D3F" stroke-width="0.8"/>
+      <path d="M59.6 154 C50 152 42 150 33.5 148.5" stroke="#6F8463" stroke-width="0.7" opacity="0.7"/>
+    </g>
+    <g>
+      <path d="M60.2 170 C74 166.5 82.5 169 87 164 C77 158.5 66 160.5 60.2 168 Z" fill="url(#rose-bud-leaf)" stroke="#4A1D3F" stroke-width="0.8"/>
+      <path d="M60.2 168 C69 166 77 164 85.5 163.5" stroke="#6F8463" stroke-width="0.7" opacity="0.7"/>
+    </g>
+  </g>
+
+  <g class="calyx">
+    <path d="M48 108 C44 120 44 130 60 132 C76 130 76 120 72 108 C68 118 52 118 48 108 Z" fill="url(#rose-bud-calyx)" stroke="#4A1D3F" stroke-width="0.9"/>
+    <path d="M50 112 C46 126 50 134 60 134 C54 128 53 120 53 113 Z" fill="#6F8463" opacity="0.45"/>
+    <path d="M47 110 C39.5 102.5 35.5 96 33 88 C42 96 49 102 52 110 Z" fill="url(#rose-bud-calyx)" stroke="#4A1D3F" stroke-width="0.8"/>
+    <path d="M73 110 C80.5 102.5 84.5 96 87 88 C78 96 71 102 68 110 Z" fill="url(#rose-bud-calyx)" stroke="#4A1D3F" stroke-width="0.8"/>
+    <path d="M58 114 C54 104 52 96 51 86 C58 95 61 104 62 114 Z" fill="url(#rose-bud-calyx)" stroke="#4A1D3F" stroke-width="0.8"/>
+  </g>
+
+  <g class="bloom">
+    <g class="petals">
+      <path class="petal" d="M44 96 C35.5 76 37.5 49 56 38 C58.5 60 56.5 86 56 110 C49.5 108.5 45.5 103 44 96 Z"
+        fill="url(#rose-bud-wrapL)" stroke="#4A1D3F" stroke-width="0.9"/>
+      <path class="petal" d="M76 96 C84.5 76 82.5 49 64 38 C61.5 60 63.5 86 64 110 C70.5 108.5 74.5 103 76 96 Z"
+        fill="url(#rose-bud-wrapR)" stroke="#4A1D3F" stroke-width="0.9"/>
+      <path class="petal" d="M49.5 100 C43.5 80 45.5 51 60 39 C74.5 51 76.5 80 70.5 100 C66.5 110.5 53.5 110.5 49.5 100 Z"
+        fill="url(#rose-bud-petalOuter)" stroke="#4A1D3F" stroke-width="0.9"/>
+      <path class="petal" d="M53 100 C49 82 51 57 60 45 C69 57 71 82 67 100 C64 109 56 109 53 100 Z"
+        fill="url(#rose-bud-petalMid)" stroke="#831843" stroke-width="0.8"/>
+      <path class="petal" d="M56 100 C53.5 84 55 61 60 51 C65 61 66.5 84 64 100 C62 108 58 108 56 100 Z"
+        fill="url(#rose-bud-petalCore)" stroke="#831843" stroke-width="0.75"/>
+      <path d="M60 57 C59 72 59 88 60 100" stroke="#831843" stroke-width="0.7" opacity="0.55"/>
+    </g>
+  </g>
+</svg>

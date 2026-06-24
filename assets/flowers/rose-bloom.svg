@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" fill="none">
+  <title>Open Garden Rose Bloom</title>
+  <defs>
+    <radialGradient id="rose-bloom-outer" cx="50%" cy="50%" r="68%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#A61E4D"/>
+      <stop offset="32%" stop-color="#D6336C"/>
+      <stop offset="72%" stop-color="#E891A9"/>
+      <stop offset="100%" stop-color="#FCE3EA"/>
+    </radialGradient>
+    <radialGradient id="rose-bloom-mid" cx="50%" cy="50%" r="58%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#831843"/>
+      <stop offset="40%" stop-color="#A61E4D"/>
+      <stop offset="78%" stop-color="#D6336C"/>
+      <stop offset="100%" stop-color="#F7C9D6"/>
+    </radialGradient>
+    <radialGradient id="rose-bloom-inner" cx="50%" cy="50%" r="52%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#4A1D3F"/>
+      <stop offset="42%" stop-color="#831843"/>
+      <stop offset="80%" stop-color="#A61E4D"/>
+      <stop offset="100%" stop-color="#E891A9"/>
+    </radialGradient>
+    <radialGradient id="rose-bloom-core" cx="50%" cy="50%" r="55%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#4A1D3F"/>
+      <stop offset="55%" stop-color="#831843"/>
+      <stop offset="100%" stop-color="#A61E4D"/>
+    </radialGradient>
+  </defs>
+
+  <g class="bloom">
+    <!-- OUTER RING: 7 broad petals -->
+    <g class="petals petals-outer" fill="url(#rose-bloom-outer)" stroke="#4A1D3F" stroke-width="1" stroke-linejoin="round">
+      <path class="petal" d="M100 100 C72 96 49 79 43 55 C38.5 36 51 23 69 25 C86 27 96.5 47 100 70 Z"/>
+      <path class="petal" d="M100 100 C97 73 105 45 126 31 C143 20 161 28 162 46 C163 64 143 81 124 90 Z"/>
+      <path class="petal" d="M100 100 C124 87 153 83 173 95 C188 104 187 124 170 132 C154 139 129 127 111 111 Z"/>
+      <path class="petal" d="M100 100 C119 121 131 149 124 173 C119 190 100 191 91.5 175 C84 161 90 134 96 112 Z"/>
+      <path class="petal" d="M100 100 C77 116 49 124 27 116 C11 109 11 90 27 81 C42 73 70 84 90 96 Z"/>
+      <path class="petal" d="M100 100 C71 104 43 100 25 83 C12 71 18 53 36 52 C52 51 78 71 92 90 Z"/>
+      <path class="petal" d="M100 100 C124 112 151 110 169 124 C182 134 176 153 158 153 C141 152 117 132 105 113 Z"/>
+    </g>
+
+    <!-- MIDDLE RING: 6 petals -->
+    <g class="petals petals-mid" fill="url(#rose-bloom-mid)" stroke="#831843" stroke-width="0.9" stroke-linejoin="round">
+      <path class="petal" d="M100 100 C84 84 75 61 85 45 C93 33 109 35 116 49 C123 65 116 86 108 100 Z"/>
+      <path class="petal" d="M100 100 C118 89 143 85 157 97 C169 107 163 123 147 124 C133 124 113 110 104 100 Z"/>
+      <path class="petal" d="M100 100 C113 116 119 139 110 155 C102 168 86 165 80 150 C75 136 86 114 96 100 Z"/>
+      <path class="petal" d="M100 100 C82 110 57 112 43 100 C31 90 38 74 53 74 C68 74 88 90 100 100 Z"/>
+      <path class="petal" d="M100 100 C85 88 69 69 73 52 C76 39 92 37 100 49 C108 62 106 84 104 100 Z"/>
+      <path class="petal" d="M100 100 C115 112 139 116 151 133 C160 145 151 159 136 155 C124 151 108 128 100 108 Z"/>
+    </g>
+
+    <!-- INNER RING: 5 furled petals -->
+    <g class="petals petals-inner" fill="url(#rose-bloom-inner)" stroke="#4A1D3F" stroke-width="0.8" stroke-linejoin="round">
+      <path class="petal" d="M100 100 C90 90 83 75 90 64 C97 55 108 57 112 68 C116 81 110 92 104 100 Z"/>
+      <path class="petal" d="M100 100 C111 93 128 91 137 102 C144 110 138 122 126 121 C115 119 104 108 100 100 Z"/>
+      <path class="petal" d="M100 100 C108 113 109 130 99 138 C90 145 79 139 80 127 C81 116 92 106 100 100 Z"/>
+      <path class="petal" d="M100 100 C88 106 71 105 63 94 C57 86 65 76 76 78 C87 80 96 92 100 100 Z"/>
+      <path class="petal" d="M100 100 C92 88 92 71 102 65 C112 60 121 67 118 78 C114 90 106 96 100 100 Z"/>
+    </g>
+
+    <!-- CORE: small furled center -->
+    <g class="petals petals-core" fill="url(#rose-bloom-core)" stroke="#4A1D3F" stroke-width="0.75" stroke-linejoin="round">
+      <path class="petal" d="M100 100 C94.5 92.5 96 83 103 80 C111 77 117 84 113 91 C110 98 104 100 100 100 Z"/>
+      <path class="petal" d="M100 100 C108 102 114 110 110 117 C107 123 98 122 95 114 C92 107 96 102 100 100 Z"/>
+      <path class="petal" d="M100 100 C92 103 83 102 80 94 C78 88 85 83 91 87 C97 91 99 97 100 100 Z"/>
+    </g>
+
+    <!-- inner veins / champagne highlights (draw-on ready) -->
+    <g class="veins" stroke="#C8A062" stroke-width="0.6" fill="none" opacity="0.5" stroke-linecap="round">
+      <path d="M100 100 C92 86 78 64 60 40"/>
+      <path d="M100 100 C112 84 140 64 158 44"/>
+      <path d="M100 100 C120 118 144 134 166 126"/>
+      <path d="M100 100 C90 120 80 146 92 172"/>
+      <path d="M100 100 C70 102 44 100 28 86"/>
+    </g>
+  </g>
+</svg>

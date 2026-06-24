@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 720" role="img" fill="none">
+  <title>Climbing botanical vine with leaves and buds for an experience timeline</title>
+  <defs>
+    <linearGradient id="vine-stem-leaf-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="0.55" stop-color="#8FA37E"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+    <linearGradient id="vine-stem-leaf-grad2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="0.55" stop-color="#8FA37E"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+    <radialGradient id="vine-stem-bud-grad" cx="0.5" cy="0.2" r="0.95">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset="0.4" stop-color="#FCE3EA"/>
+      <stop offset="0.75" stop-color="#F7C9D6"/>
+      <stop offset="1" stop-color="#E891A9"/>
+    </radialGradient>
+    <radialGradient id="vine-stem-bud-grad2" cx="0.5" cy="0.2" r="1">
+      <stop offset="0" stop-color="#FCE3EA"/>
+      <stop offset="0.45" stop-color="#F7C9D6"/>
+      <stop offset="0.8" stop-color="#E891A9"/>
+      <stop offset="1" stop-color="#D6336C"/>
+    </radialGradient>
+    <linearGradient id="vine-stem-bud-grad3" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#FCE3EA"/>
+      <stop offset="0.5" stop-color="#F7C9D6"/>
+      <stop offset="1" stop-color="#E891A9"/>
+    </linearGradient>
+    <linearGradient id="vine-stem-gold" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#B8915A"/>
+      <stop offset="0.5" stop-color="#C8A062"/>
+      <stop offset="1" stop-color="#B8915A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- MAIN VINE STEM: single continuous S-curve, bottom (y=712) to top (y=4) -->
+  <g class="stem">
+    <path id="vine-stem-main" d="M60 712 C 44 660 80 620 66 568 C 52 516 28 484 44 432 C 60 380 86 348 70 296 C 54 244 30 212 46 160 C 62 108 84 76 66 24 C 60 12 58 6 60 4"
+          stroke="url(#vine-stem-gold)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- BLOOM: all nodes (leaves + buds) that animate open from center 60,360 -->
+  <g class="bloom">
+
+    <!-- NODE 1 — leaf, lower, attach ~(67,602) -->
+    <g class="vine-node petals" id="vine-stem-node1">
+      <path d="M67 602 C 90 596 104 580 109 558" stroke="#6F8463" stroke-width="1" fill="none"/>
+      <path class="petal" d="M109 558 C 92 556 78 564 74 581 C 84 589 102 583 109 558 Z" fill="url(#vine-stem-leaf-grad)" stroke="#4A1D3F" stroke-width="0.8"/>
+      <path d="M105 561 C 96 568 87 575 79 580" stroke="#4A1D3F" stroke-width="0.7" fill="none" opacity="0.6"/>
+    </g>
+
+    <!-- NODE 2 — single bud (3 petals), mid-lower, attach ~(37,466) -->
+    <g class="vine-node petals" id="vine-stem-node2">
+      <path d="M37 466 C 23 459 15 446 14 432" stroke="#6F8463" stroke-width="1" fill="none"/>
+      <path class="petal" d="M14 432 C 6 423 7 410 14 404 C 21 410 22 423 14 432 Z" fill="url(#vine-stem-bud-grad)" stroke="#831843" stroke-width="0.8"/>
+      <path class="petal" d="M14 432 C 9 425 8 415 11 408 C 16 414 17 425 14 432 Z" fill="url(#vine-stem-bud-grad3)" stroke="#831843" stroke-width="0.7" opacity="0.95"/>
+      <path d="M14 432 C 12 425 12 416 14 410" stroke="#A61E4D" stroke-width="0.6" fill="none" opacity="0.6"/>
+      <path d="M8 433 C 11 431 17 431 20 433" stroke="#8FA37E" stroke-width="1" fill="none"/>
+    </g>
+
+    <!-- NODE 3 — leaf, mid-upper, attach ~(67,304) -->
+    <g class="vine-node petals" id="vine-stem-node3">
+      <path d="M67 304 C 90 300 103 285 107 266" stroke="#6F8463" stroke-width="1" fill="none"/>
+      <path class="petal" d="M107 266 C 90 264 76 271 72 288 C 82 296 100 290 107 266 Z" fill="url(#vine-stem-leaf-grad2)" stroke="#4A1D3F" stroke-width="0.8"/>
+      <path d="M103 269 C 94 276 85 283 77 288" stroke="#4A1D3F" stroke-width="0.7" fill="none" opacity="0.6"/>
+    </g>
+
+    <!-- NODE 4 — bud cluster (3 petals across 2 buds), upper, attach ~(52,146) -->
+    <g class="vine-node petals" id="vine-stem-node4">
+      <path d="M52 146 C 33 139 23 124 22 108" stroke="#6F8463" stroke-width="1" fill="none"/>
+      <path d="M32 124 C 38 116 41 106 40 96" stroke="#6F8463" stroke-width="0.9" fill="none"/>
+      <path class="petal" d="M22 108 C 13 99 13 84 22 77 C 31 84 31 99 22 108 Z" fill="url(#vine-stem-bud-grad2)" stroke="#831843" stroke-width="0.8"/>
+      <path class="petal" d="M22 108 C 17 100 17 89 21 82 C 26 89 26 100 22 108 Z" fill="url(#vine-stem-bud-grad3)" stroke="#831843" stroke-width="0.7" opacity="0.95"/>
+      <path class="petal" d="M40 96 C 42 105 39 114 32 118 C 30 109 33 100 40 96 Z" fill="url(#vine-stem-bud-grad)" stroke="#831843" stroke-width="0.7"/>
+      <path d="M22 108 C 19 100 19 89 22 83" stroke="#A61E4D" stroke-width="0.6" fill="none" opacity="0.6"/>
+      <path d="M16 108 C 19 106 25 106 28 108" stroke="#8FA37E" stroke-width="1" fill="none"/>
+    </g>
+
+  </g>
+</svg>

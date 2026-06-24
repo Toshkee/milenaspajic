@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 230" role="img" fill="none">
+  <title>Tulip</title>
+  <defs>
+    <linearGradient id="tulip-petal-left" x1="0.15" y1="0" x2="0.75" y2="1">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset="0.45" stop-color="#F7C9D6"/>
+      <stop offset="0.8" stop-color="#E891A9"/>
+      <stop offset="1" stop-color="#A61E4D"/>
+    </linearGradient>
+    <linearGradient id="tulip-petal-right" x1="0.85" y1="0" x2="0.25" y2="1">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset="0.45" stop-color="#F7C9D6"/>
+      <stop offset="0.8" stop-color="#E891A9"/>
+      <stop offset="1" stop-color="#A61E4D"/>
+    </linearGradient>
+    <radialGradient id="tulip-petal-front" cx="0.5" cy="0.22" r="0.9">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset="0.4" stop-color="#FCE3EA"/>
+      <stop offset="0.72" stop-color="#F7C9D6"/>
+      <stop offset="1" stop-color="#D6336C"/>
+    </radialGradient>
+    <linearGradient id="tulip-stem-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+    <linearGradient id="tulip-leaf-grad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="0.6" stop-color="#8FA37E"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+    <linearGradient id="tulip-leaf-grad2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="0.6" stop-color="#8FA37E"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+  </defs>
+
+  <g class="stem">
+    <path d="M59.5 78 C57.2 110 55.8 145 57.5 178 C58.4 196 59.4 210 60 226"
+          stroke="url(#tulip-stem-grad)" stroke-width="4.2" stroke-linecap="round"/>
+    <path d="M57.6 121 C41 124 27 137 21 158 C24 156 28 154 31 151 C42 145 50 137 57.4 131 Z"
+          fill="url(#tulip-leaf-grad1)" stroke="#6F8463" stroke-width="1"/>
+    <path d="M56.5 124 C42 127 30 138 23 156" stroke="#6F8463" stroke-width="0.8" opacity="0.55" fill="none"/>
+    <path d="M58.8 149 C75 154 88 170 93 193 C90 191 86 189 83 187 C72 180 65 171 59.2 162 Z"
+          fill="url(#tulip-leaf-grad2)" stroke="#6F8463" stroke-width="1"/>
+    <path d="M59.8 152 C74 157 85 169 91 191" stroke="#6F8463" stroke-width="0.8" opacity="0.55" fill="none"/>
+  </g>
+
+  <g class="bloom">
+    <g class="petals">
+      <path class="petal" d="M60 80 C43 75 37.5 55 40.5 37 C42.5 22.5 50.5 13 60 11.5 C58 32 57 56 60 80 Z"
+            fill="url(#tulip-petal-left)" stroke="#831843" stroke-width="1"/>
+      <path class="petal" d="M60 80 C77 75 82.5 55 79.5 37 C77.5 22.5 69.5 13 60 11.5 C62 32 63 56 60 80 Z"
+            fill="url(#tulip-petal-right)" stroke="#831843" stroke-width="1"/>
+      <path class="petal" d="M60 80 C49.5 77.5 44.5 60 45.5 41.5 C46.5 25 53 12.5 60 10.5 C67 12.5 73.5 25 74.5 41.5 C75.5 60 70.5 77.5 60 80 Z"
+            fill="url(#tulip-petal-front)" stroke="#4A1D3F" stroke-width="1.1"/>
+      <path class="vein" d="M60 75 C58 58 58 35 60 15" stroke="#A61E4D" stroke-width="0.8" opacity="0.5" fill="none"/>
+      <path class="vein" d="M51.5 72 C49.5 56 50.5 37 55 21" stroke="#D6336C" stroke-width="0.7" opacity="0.38" fill="none"/>
+      <path class="vein" d="M68.5 72 C70.5 56 69.5 37 65 21" stroke="#D6336C" stroke-width="0.7" opacity="0.38" fill="none"/>
+    </g>
+  </g>
+</svg>

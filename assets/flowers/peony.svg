@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" role="img" fill="none">
+  <title>Ruffled peony in full bloom</title>
+  <defs>
+    <radialGradient id="peony-petal-outer" cx="50%" cy="82%" r="74%">
+      <stop offset="0%" stop-color="#D6336C"/>
+      <stop offset="45%" stop-color="#E891A9"/>
+      <stop offset="100%" stop-color="#FCE3EA"/>
+    </radialGradient>
+    <radialGradient id="peony-petal-mid" cx="50%" cy="84%" r="72%">
+      <stop offset="0%" stop-color="#A61E4D"/>
+      <stop offset="48%" stop-color="#D6336C"/>
+      <stop offset="100%" stop-color="#F7C9D6"/>
+    </radialGradient>
+    <radialGradient id="peony-petal-inner" cx="50%" cy="86%" r="70%">
+      <stop offset="0%" stop-color="#831843"/>
+      <stop offset="50%" stop-color="#A61E4D"/>
+      <stop offset="100%" stop-color="#E891A9"/>
+    </radialGradient>
+    <radialGradient id="peony-core" cx="50%" cy="58%" r="62%">
+      <stop offset="0%" stop-color="#FFF5F7"/>
+      <stop offset="55%" stop-color="#F7C9D6"/>
+      <stop offset="100%" stop-color="#D6336C"/>
+    </radialGradient>
+    <linearGradient id="peony-stem-grad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#6F8463"/>
+      <stop offset="100%" stop-color="#A9BD9C"/>
+    </linearGradient>
+    <radialGradient id="peony-leaf-grad" cx="50%" cy="50%" r="68%">
+      <stop offset="0%" stop-color="#A9BD9C"/>
+      <stop offset="100%" stop-color="#6F8463"/>
+    </radialGradient>
+  </defs>
+
+  <g class="stem">
+    <path d="M110 130 C109 150 110 172 112 196" stroke="url(#peony-stem-grad)" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M111 150 C92 153 76 147 64 133 C82 137 99 141 112 150 Z" fill="url(#peony-leaf-grad)" stroke="#6F8463" stroke-width="0.9"/>
+    <path d="M77 139 C90 142 101 145 110 150" stroke="#6F8463" stroke-width="0.7" fill="none"/>
+    <path d="M111 165 C131 169 147 162 159 148 C140 152 124 156 110 165 Z" fill="url(#peony-leaf-grad)" stroke="#6F8463" stroke-width="0.9"/>
+    <path d="M145 154 C132 157 121 160 111 165" stroke="#6F8463" stroke-width="0.7" fill="none"/>
+  </g>
+
+  <g class="bloom">
+    <g class="petals">
+      <!-- OUTER RING: large wavy ruffled petals -->
+      <path class="petal" d="M110 92 C78 72 54 76 44 96 C36 112 44 132 64 138 C82 143 100 126 110 110 Z" fill="url(#peony-petal-outer)" stroke="#831843" stroke-width="1"/>
+      <path class="petal" d="M110 92 C142 72 166 76 176 96 C184 112 176 132 156 138 C138 143 120 126 110 110 Z" fill="url(#peony-petal-outer)" stroke="#831843" stroke-width="1"/>
+      <path class="petal" d="M110 96 C84 56 58 50 42 64 C28 77 32 100 52 110 C72 119 96 112 110 102 Z" fill="url(#peony-petal-outer)" stroke="#831843" stroke-width="1"/>
+      <path class="petal" d="M110 96 C136 56 162 50 178 64 C192 77 188 100 168 110 C148 119 124 112 110 102 Z" fill="url(#peony-petal-outer)" stroke="#831843" stroke-width="1"/>
+      <path class="petal" d="M110 98 C100 62 80 40 58 44 C40 48 36 70 52 84 C68 97 94 96 110 100 Z" fill="url(#peony-petal-outer)" stroke="#831843" stroke-width="1"/>
+      <path class="petal" d="M110 98 C120 62 140 40 162 44 C180 48 184 70 168 84 C152 97 126 96 110 100 Z" fill="url(#peony-petal-outer)" stroke="#831843" stroke-width="1"/>
+      <path class="petal" d="M110 100 C100 70 90 44 110 30 C130 44 120 70 110 100 Z" fill="url(#peony-petal-outer)" stroke="#831843" stroke-width="1"/>
+
+      <!-- MID RING: medium ruffled petals -->
+      <path class="petal" d="M110 102 C88 88 66 90 58 104 C52 116 60 130 76 132 C90 133 104 120 110 108 Z" fill="url(#peony-petal-mid)" stroke="#831843" stroke-width="0.9"/>
+      <path class="petal" d="M110 102 C132 88 154 90 162 104 C168 116 160 130 144 132 C130 133 116 120 110 108 Z" fill="url(#peony-petal-mid)" stroke="#831843" stroke-width="0.9"/>
+      <path class="petal" d="M110 104 C90 76 68 70 56 82 C46 92 52 110 70 114 C86 117 102 110 110 104 Z" fill="url(#peony-petal-mid)" stroke="#831843" stroke-width="0.9"/>
+      <path class="petal" d="M110 104 C130 76 152 70 164 82 C174 92 168 110 150 114 C134 117 118 110 110 104 Z" fill="url(#peony-petal-mid)" stroke="#831843" stroke-width="0.9"/>
+      <path class="petal" d="M110 104 C99 80 88 64 110 58 C132 64 121 80 110 104 Z" fill="url(#peony-petal-mid)" stroke="#831843" stroke-width="0.9"/>
+
+      <!-- INNER RING: small cupped petals around the core -->
+      <path class="petal" d="M110 106 C96 98 82 102 80 112 C78 122 90 128 100 122 C107 118 110 112 110 108 Z" fill="url(#peony-petal-inner)" stroke="#4A1D3F" stroke-width="0.8"/>
+      <path class="petal" d="M110 106 C124 98 138 102 140 112 C142 122 130 128 120 122 C113 118 110 112 110 108 Z" fill="url(#peony-petal-inner)" stroke="#4A1D3F" stroke-width="0.8"/>
+      <path class="petal" d="M110 106 C99 92 88 84 110 80 C132 84 121 92 110 106 Z" fill="url(#peony-petal-inner)" stroke="#4A1D3F" stroke-width="0.8"/>
+      <path class="petal" d="M110 108 C98 104 86 110 88 120 C90 128 102 128 108 120 Z" fill="url(#peony-petal-inner)" stroke="#4A1D3F" stroke-width="0.8"/>
+      <path class="petal" d="M110 108 C122 104 134 110 132 120 C130 128 118 128 112 120 Z" fill="url(#peony-petal-inner)" stroke="#4A1D3F" stroke-width="0.8"/>
+    </g>
+
+    <!-- petal veins, delicate -->
+    <g class="veins" stroke-linecap="round" fill="none">
+      <path d="M110 108 C92 116 76 120 56 116" stroke="#C8A062" stroke-width="0.6" opacity="0.55"/>
+      <path d="M110 108 C128 116 144 120 164 116" stroke="#C8A062" stroke-width="0.6" opacity="0.55"/>
+      <path d="M110 102 C100 84 92 66 78 52" stroke="#831843" stroke-width="0.6" opacity="0.45"/>
+      <path d="M110 102 C120 84 128 66 142 52" stroke="#831843" stroke-width="0.6" opacity="0.45"/>
+    </g>
+
+    <!-- powder-puff center -->
+    <g class="center">
+      <path d="M110 96 C98 100 96 114 104 122 C112 128 122 122 124 112 C126 100 118 94 110 96 Z" fill="url(#peony-core)" stroke="#A61E4D" stroke-width="0.8"/>
+      <path d="M110 100 C106 104 106 112 110 116 C114 112 114 104 110 100 Z" fill="#FFF5F7" stroke="#D6336C" stroke-width="0.6"/>
+      <path d="M104 104 L106 99 M110 105 L110 99 M116 104 L114 99 M107 110 L105 106 M113 110 L115 106" stroke="#C8A062" stroke-width="0.8" stroke-linecap="round"/>
+      <circle cx="106" cy="98" r="1" fill="#C8A062"/>
+      <circle cx="110" cy="97.5" r="1" fill="#C8A062"/>
+      <circle cx="114" cy="98" r="1" fill="#C8A062"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 80" role="img" fill="none">
+  <title>Rose petal</title>
+  <defs>
+    <linearGradient id="petal-grad-fill" x1="30" y1="6" x2="30" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF5F7"/>
+      <stop offset="0.3" stop-color="#FCE3EA"/>
+      <stop offset="0.58" stop-color="#F7C9D6"/>
+      <stop offset="0.82" stop-color="#E891A9"/>
+      <stop offset="1" stop-color="#D6336C"/>
+    </linearGradient>
+    <radialGradient id="petal-grad-sheen" cx="0.42" cy="0.28" r="0.72">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="0.5" stop-color="#FFF5F7" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#FFF5F7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g class="bloom">
+    <g class="petals">
+      <path class="petal" d="M30 74 C14.5 67.5 6.8 53 7.6 36.5 C8.2 23 16 11.5 28.2 7 C29 6.7 29.4 6.9 30 8.4 C30.6 6.9 31 6.7 31.8 7 C44 11.5 51.8 23 52.4 36.5 C53.2 53 45.5 67.5 30 74 Z"
+            fill="url(#petal-grad-fill)" stroke="#831843" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+      <path class="petal" d="M30 74 C14.5 67.5 6.8 53 7.6 36.5 C8.2 23 16 11.5 28.2 7 C29 6.7 29.4 6.9 30 8.4 C30.6 6.9 31 6.7 31.8 7 C44 11.5 51.8 23 52.4 36.5 C53.2 53 45.5 67.5 30 74 Z"
+            fill="url(#petal-grad-sheen)" stroke="none"/>
+      <path d="M30 71 C29.5 54 29.5 28 30 11" stroke="#C8A062" stroke-width="0.75" stroke-linecap="round" opacity="0.55" fill="none"/>
+    </g>
+  </g>
+</svg>

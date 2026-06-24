@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" role="img" fill="none">
+  <title>Botanical leaf sprig — arching sage foliage accent</title>
+  <defs>
+    <linearGradient id="leaf-sprig-stem-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6F8463"/>
+      <stop offset="0.6" stop-color="#8FA37E"/>
+      <stop offset="1" stop-color="#C8A062"/>
+    </linearGradient>
+    <linearGradient id="leaf-sprig-leaf-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="0.5" stop-color="#8FA37E"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+    <linearGradient id="leaf-sprig-leaf-b" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="0.5" stop-color="#8FA37E"/>
+      <stop offset="1" stop-color="#6F8463"/>
+    </linearGradient>
+    <radialGradient id="leaf-sprig-tip" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#A9BD9C"/>
+      <stop offset="1" stop-color="#8FA37E"/>
+    </radialGradient>
+  </defs>
+
+  <g class="stem">
+    <path class="stem-line" d="M6 92 C 44 84, 86 66, 118 46 C 138 33, 152 24, 162 19"
+          fill="none" stroke="url(#leaf-sprig-stem-grad)" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M30 87 L 23.5 69.5" fill="none" stroke="#8FA37E" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M48 80 L 58.5 91.5" fill="none" stroke="#8FA37E" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M72 70 L 63.5 52.5" fill="none" stroke="#8FA37E" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M94 58 L 104.5 67.5" fill="none" stroke="#8FA37E" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M118 46 L 109.5 30.5" fill="none" stroke="#8FA37E" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M140 33 L 150.5 40.5" fill="none" stroke="#8FA37E" stroke-width="0.8" stroke-linecap="round"/>
+  </g>
+
+  <g class="bloom">
+    <g class="petals">
+      <g class="leaf" id="leaf-sprig-leaf1">
+        <path class="petal" d="M23.5 69.5 C 13 65, 7.5 53.5, 12 46 C 21.5 49.5, 27 59.5, 23.5 69.5 Z"
+              fill="url(#leaf-sprig-leaf-b)" stroke="#4A1D3F" stroke-width="0.75"/>
+        <path d="M22.5 67.5 C 18 60, 15.5 55, 14 50.5" fill="none" stroke="#6F8463" stroke-width="0.6" stroke-linecap="round"/>
+      </g>
+      <g class="leaf" id="leaf-sprig-leaf2">
+        <path class="petal" d="M58.5 91.5 C 68 98, 79.5 97.5, 84 90.5 C 76.5 83.5, 64 84, 58.5 91.5 Z"
+              fill="url(#leaf-sprig-leaf-a)" stroke="#4A1D3F" stroke-width="0.75"/>
+        <path d="M60 90 C 68 90, 75 89.5, 82 88.5" fill="none" stroke="#6F8463" stroke-width="0.6" stroke-linecap="round"/>
+      </g>
+      <g class="leaf" id="leaf-sprig-leaf3">
+        <path class="petal" d="M63.5 52.5 C 54 47, 50 35.5, 55 29 C 64.5 33, 69 44.5, 63.5 52.5 Z"
+              fill="url(#leaf-sprig-leaf-b)" stroke="#4A1D3F" stroke-width="0.75"/>
+        <path d="M62.5 50.5 C 59 43, 57.5 38, 57 33.5" fill="none" stroke="#6F8463" stroke-width="0.6" stroke-linecap="round"/>
+      </g>
+      <g class="leaf" id="leaf-sprig-leaf4">
+        <path class="petal" d="M104.5 67.5 C 114 74, 125 72.5, 129 65 C 121.5 58.5, 109.5 59.5, 104.5 67.5 Z"
+              fill="url(#leaf-sprig-leaf-a)" stroke="#4A1D3F" stroke-width="0.75"/>
+        <path d="M106 66 C 114 66, 121 65, 127 63.5" fill="none" stroke="#6F8463" stroke-width="0.6" stroke-linecap="round"/>
+      </g>
+      <g class="leaf" id="leaf-sprig-leaf5">
+        <path class="petal" d="M109.5 30.5 C 101 23, 98 12, 104 6.5 C 112.5 11.5, 115.5 23.5, 109.5 30.5 Z"
+              fill="url(#leaf-sprig-leaf-b)" stroke="#4A1D3F" stroke-width="0.75"/>
+        <path d="M108.5 28.5 C 105 21, 104 16, 104 11.5" fill="none" stroke="#6F8463" stroke-width="0.6" stroke-linecap="round"/>
+      </g>
+      <g class="leaf" id="leaf-sprig-leaf6">
+        <path class="petal" d="M150.5 40.5 C 159 46, 168.5 43.5, 169.5 36.5 C 162.5 31, 153 33.5, 150.5 40.5 Z"
+              fill="url(#leaf-sprig-leaf-a)" stroke="#4A1D3F" stroke-width="0.75"/>
+        <path d="M152 39 C 158 38.5, 163 37.5, 167.5 36.5" fill="none" stroke="#6F8463" stroke-width="0.6" stroke-linecap="round"/>
+      </g>
+      <g class="leaf" id="leaf-sprig-tip-leaf">
+        <path class="petal" d="M162 19 C 157.5 11.5, 158.5 4, 164 2 C 168.5 7.5, 167.5 15, 162 19 Z"
+              fill="url(#leaf-sprig-tip)" stroke="#4A1D3F" stroke-width="0.75"/>
+        <path d="M162.5 17.5 C 161 12.5, 161 9, 162 5.5" fill="none" stroke="#6F8463" stroke-width="0.6" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+</svg>

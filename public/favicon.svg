@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="core" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#A61E4D"/>
+      <stop offset="100%" stop-color="#831843"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#FFF1F4"/>
+  <!-- outer petals -->
+  <g fill="#E891A9">
+    <circle cx="32" cy="20.5" r="10.5"/>
+    <circle cx="44.8" cy="29.8" r="10.5"/>
+    <circle cx="39.9" cy="44.8" r="10.5"/>
+    <circle cx="24.1" cy="44.8" r="10.5"/>
+    <circle cx="19.2" cy="29.8" r="10.5"/>
+  </g>
+  <!-- middle petals -->
+  <g fill="#D6336C">
+    <circle cx="38.2" cy="24.5" r="7.4"/>
+    <circle cx="41.5" cy="38.3" r="7.4"/>
+    <circle cx="28.8" cy="44" r="7.4"/>
+    <circle cx="21.6" cy="33.5" r="7.4"/>
+    <circle cx="29.9" cy="22.4" r="7.4"/>
+  </g>
+  <!-- core -->
+  <circle cx="32" cy="33" r="6.8" fill="url(#core)"/>
+  <circle cx="30" cy="31" r="1.9" fill="#E891A9" opacity="0.55"/>
+</svg>

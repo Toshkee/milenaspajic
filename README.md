@@ -3,14 +3,15 @@
 A single-page personal portfolio for **Milena Spajić**, Account & Operations Manager
 (Marketing · Client Relations · Events).
 
-**Design direction:** *Noir Couture* — ink-black & champagne-gold palette, Bodoni Moda display
+**Design direction:** *Noir Couture* — ink-black & champagne-gold palette that warms up as you
+scroll (a dusty-rosé Skills section, then deep wine from Contact to the footer), Bodoni Moda display
 type with Manrope body text, and a cinematic, Awwwards-style motion layer.
 
 **Motion layer (GSAP 3 + ScrollTrigger + SplitText + Lenis):** a hero where a gold pen traces
 the outline of her name before the letters fill in, then the photo rises behind the name on
 scroll while the name splits apart (difference-blended over the photo), a scroll-driven marquee of her actual route
 (Podgorica → London → Miami, with years), a word-by-word lit statement, a pinned horizontal
-experience track, an ink → bone theme flip on the Skills section, a blend-mode cursor and
+experience track, theme flips (ink → rosé on Skills, wine from Contact to the end), a blend-mode cursor and
 magnetic buttons. Everything degrades gracefully: reduced-motion users and no-JS visitors get
 the full static site.
 
@@ -64,7 +65,8 @@ back to both navs. `initWork()` in `main.js` picks it up automatically.
 All copy lives directly in `index.html`: experience, skills rows, education, languages, etc.
 
 ### 4. Change colours or fonts
-All design tokens are at the top of `styles.css` under `:root` (e.g. `--ink`, `--bone`, `--gold`). Change them in one place and the whole site updates. Fonts are set via `--font-display`
+All design tokens are at the top of `styles.css` under `:root` (e.g. `--ink`, `--bone`, `--gold`, `--rose-bg`, `--wine`). Section colours are set by `data-theme="rose|wine"` on a section
+plus the matching `.theme-*` block in `styles.css`. Change them in one place and the whole site updates. Fonts are set via `--font-display`
 and `--font-body`.
 
 ### 5. Favicon & social image

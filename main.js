@@ -23,6 +23,7 @@ import Lenis from "lenis";
 
   initYear();
   initContactForm();
+  initCopyEmail();
 
   // Reduced motion → static, fully-visible site.
   if (reduce) {
@@ -289,15 +290,56 @@ import Lenis from "lenis";
     mm.add("(min-width: 961px)", () => {
       sec.classList.add("is-horizontal");
       const dist = () => track.scrollWidth - innerWidth;
+      let ticks = []; // filled below; markYear can run as soon as the trigger exists
 
       const moveTween = gsap.to(track, {
         x: () => -dist(), ease: "none",
         scrollTrigger: {
           trigger: pin, start: "top top", end: () => "+=" + dist(),
           pin: true, scrub: 1, refreshPriority: 1, invalidateOnRefresh: true, anticipatePin: 1,
-          onUpdate: (self) => (bar.style.transform = `scaleX(${self.progress})`),
+          onUpdate: (self) => { bar.style.transform = `scaleX(${self.progress})`; markYear(self.progress); },
         },
       });
+
+      // Year ticks on the progress line: each sits at the scroll point where its job is centred.
+      const st = moveTween.scrollTrigger;
+      const years = document.createElement("ol");
+      years.className = "career__years";
+      ticks = jobs.map((job) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "career__tick";
+        btn.textContent = $(".job__years", job).firstChild.textContent.trim();
+        btn.setAttribute("aria-label", `Jump to ${$(".job__role", job).textContent} (${btn.textContent})`);
+        btn.addEventListener("click", () => {
+          const y = st.start + (st.end - st.start) * +btn.dataset.at;
+          lenis ? lenis.scrollTo(y, { duration: 1.4 }) : window.scrollTo({ top: y, behavior: "smooth" });
+        });
+        li.appendChild(btn);
+        years.appendChild(li);
+        return { btn, job };
+      });
+      $(".career__progress", sec).appendChild(years);
+      const placeTicks = () => {
+        ticks.forEach(({ btn, job }) => {
+          const centre = job.offsetLeft + job.offsetWidth / 2 - innerWidth * 0.45;
+          const at = gsap.utils.clamp(0, 1, centre / Math.max(1, dist()));
+          btn.dataset.at = at;
+          btn.parentElement.style.left = (at * 100).toFixed(2) + "%";
+        });
+        markYear(st.progress);
+      };
+      function markYear(p) {
+        let active = 0, best = Infinity;
+        ticks.forEach(({ btn }, i) => {
+          const d = Math.abs(p - +btn.dataset.at);
+          if (d < best) { best = d; active = i; }
+        });
+        ticks.forEach(({ btn }, i) => btn.classList.toggle("is-active", i === active));
+      }
+      placeTicks();
+      ScrollTrigger.addEventListener("refresh", placeTicks);
       jobs.forEach((job) => {
         gsap.from($$(".job__years, .job__date, .job__role, .job__org, li", job), {
           y: 60, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.06,
@@ -305,21 +347,68 @@ import Lenis from "lenis";
         });
       });
 
-      return () => sec.classList.remove("is-horizontal");
+      return () => {
+        sec.classList.remove("is-horizontal");
+        years.remove();
+        ScrollTrigger.removeEventListener("refresh", placeTicks);
+      };
     });
     mm.add("(max-width: 960px)", () => {
-      jobs.forEach((job) => fadeUp($$(".job__head, .job__role, .job__org, li", job), job, { stagger: 0.06 }));
+      jobs.forEach((job) => fadeUp($$(".job__head, .job__role, .job__org", job), job, { stagger: 0.06 }));
+    });
+    // Phones: show years, role and company; the bullet points open on tap.
+    mm.add("(max-width: 820px)", () => {
+      const toggles = jobs.map((job, i) => {
+        const list = $("ul", job);
+        list.id ||= `job-details-${i}`;
+        list.hidden = true;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "job__more";
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-controls", list.id);
+        btn.innerHTML = 'Details <i aria-hidden="true">+</i>';
+        btn.addEventListener("click", () => {
+          const open = btn.getAttribute("aria-expanded") !== "true";
+          btn.setAttribute("aria-expanded", String(open));
+          gsap.killTweensOf(list);
+          if (open) {
+            list.hidden = false;
+            gsap.fromTo(list, { height: 0, opacity: 0 }, {
+              height: "auto", opacity: 1, duration: 0.5, ease: "power3.out",
+              onComplete: () => { gsap.set(list, { clearProps: "height" }); ScrollTrigger.refresh(); },
+            });
+          } else {
+            gsap.to(list, {
+              height: 0, opacity: 0, duration: 0.35, ease: "power2.in",
+              onComplete: () => { list.hidden = true; gsap.set(list, { clearProps: "height,opacity" }); ScrollTrigger.refresh(); },
+            });
+          }
+        });
+        $(".job__org", job).after(btn);
+        return { btn, list };
+      });
+      return () => toggles.forEach(({ btn, list }) => {
+        btn.remove();
+        list.hidden = false;
+        gsap.set(list, { clearProps: "height,opacity" });
+      });
     });
   }
 
   /* =============================================================
-     Theme flip — ink → bone while the Skills section is centred
+     Theme flips — rosé for Skills, wine from Contact to the end
      ============================================================= */
   function initTheme() {
-    $$("[data-theme='light']").forEach((sec) => {
+    const groups = {};
+    $$("[data-theme]").forEach((el) => (groups[el.dataset.theme] ||= []).push(el));
+    Object.entries(groups).forEach(([name, els]) => {
+      const last = els[els.length - 1];
+      const runsToEnd = last.matches(".footer"); // the closing theme holds until the very bottom
       ScrollTrigger.create({
-        trigger: sec, start: "top 55%", end: "bottom 45%",
-        onToggle: (self) => document.body.classList.toggle("is-light", self.isActive),
+        trigger: els[0], start: "top 55%",
+        endTrigger: last, end: runsToEnd ? () => ScrollTrigger.maxScroll(window) + 10 : "bottom 45%",
+        onToggle: (self) => document.body.classList.toggle(`theme-${name}`, self.isActive),
       });
     });
   }
@@ -519,6 +608,31 @@ import Lenis from "lenis";
      ============================================================= */
   function initYear() {
     $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
+  }
+
+  /* ---------- Copy email (for visitors without a mail app) ---------- */
+  function initCopyEmail() {
+    const btn = $(".contact__copy");
+    if (!btn) return;
+    const status = $(".contact__copied");
+    btn.hidden = false;
+    let t;
+    btn.addEventListener("click", async () => {
+      const text = btn.dataset.copy;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const tmp = Object.assign(document.createElement("textarea"), { value: text });
+        tmp.style.cssText = "position:fixed;opacity:0";
+        document.body.appendChild(tmp);
+        tmp.select();
+        document.execCommand("copy");
+        tmp.remove();
+      }
+      status.textContent = "Copied to clipboard";
+      clearTimeout(t);
+      t = setTimeout(() => (status.textContent = ""), 2400);
+    });
   }
 
   /* ---------- Contact form (FormSubmit AJAX) ---------- */

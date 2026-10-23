@@ -100,11 +100,13 @@ import Lenis from "lenis";
     const extras = $$(".hero__foot", hero);
     const introBits = [...$$(".hero__foot > *", hero), ...$$(".nav > *")];
 
-    // r: photo reveal (0 hidden below → 1 full bleed). One writer for clip + zoom.
+    // r: photo reveal (0 hidden below → 1 full bleed). The mask slides up while the photo
+    // counter-slides, so it reads like a wipe but stays transform-only (no repaints).
     const st = { r: 0 };
     function render() {
-      media.style.clipPath = `inset(${((1 - st.r) * 100).toFixed(2)}% 0% 0% 0%)`;
-      img.style.transform = `scale(${(1.25 - 0.25 * st.r).toFixed(4)})`;
+      const off = ((1 - st.r) * 100).toFixed(3);
+      media.style.transform = `translate3d(0, ${off}%, 0)`;
+      img.style.transform = `translate3d(0, -${off}%, 0) scale(${(1.25 - 0.25 * st.r).toFixed(4)})`;
     }
     render();
 
@@ -116,11 +118,12 @@ import Lenis from "lenis";
 
     gsap.set(introBits, { opacity: 0, y: 20 });
 
-    // Scroll scene: pin, raise the photo behind the name, push the name apart
+    // Scroll scene: the stage is CSS-sticky inside a tall section (no JS pin, so no jitter on
+    // phones). Touch scrolling maps 1:1; the mouse gets a little smoothing.
     gsap.timeline({
       scrollTrigger: {
-        trigger: hero, start: "top top", end: "+=140%",
-        pin: true, scrub: 1, refreshPriority: 2,
+        trigger: hero, start: "top top", end: "bottom bottom",
+        scrub: finePointer ? 1 : true,
       },
     })
       .fromTo(st, { r: 0 }, { r: 1, duration: 1, ease: "power2.inOut", onUpdate: render, immediateRender: false }, 0)
@@ -255,10 +258,18 @@ import Lenis from "lenis";
 
     const statement = $(".about__statement", sec);
     const words = new SplitText(statement, { type: "words", wordsClass: "w" }).words;
-    gsap.fromTo(words, { opacity: 0.12 }, {
-      opacity: 1, ease: "none", stagger: 0.1,
-      scrollTrigger: { trigger: statement, start: "top 78%", end: "bottom 42%", scrub: true },
-    });
+    if (finePointer) {
+      gsap.fromTo(words, { opacity: 0.12 }, {
+        opacity: 1, ease: "none", stagger: 0.1,
+        scrollTrigger: { trigger: statement, start: "top 78%", end: "bottom 42%", scrub: true },
+      });
+    } else {
+      // phones: one short reveal instead of re-painting every word on every scroll frame
+      gsap.fromTo(words, { opacity: 0.12 }, {
+        opacity: 1, duration: 0.6, ease: "power1.out", stagger: 0.025,
+        scrollTrigger: { trigger: statement, start: "top 75%" },
+      });
+    }
 
     $$(".fade-up", sec).forEach((el) => fadeUp(el, el));
   }

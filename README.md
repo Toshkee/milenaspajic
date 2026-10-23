@@ -3,16 +3,19 @@
 A single-page personal portfolio for **Milena Spajić**, Account & Operations Manager
 (Marketing · Client Relations · Events).
 
-**Design direction:** *Editorial Atelier* — a "Rosé & Champagne" palette (blush · deep plum ·
-champagne gold), Editorial-Luxe typography (Playfair Display + Inter), and lush, cinematic
-GSAP floral animation (hand-crafted SVG roses, peonies & tulips that bloom, drift and grow).
+**Design direction:** *Noir Couture* — ink-black & champagne-gold palette, Bodoni Moda display
+type with Manrope body text, and a cinematic, Awwwards-style motion layer.
 
-**Motion layer (GSAP 3.13 + SplitText + ScrollTrigger + Lenis):** preloader curtain intro,
-per-character hero name reveal, masked word-by-word section titles with a gold shimmer sweep
-on the italic accents, an interactive canvas petal field (petals react to the cursor like wind
-and gust with scroll speed), scroll progress bar, mouse-parallax
-hero layers, 3D tilt + glare on the portrait and gallery cards, film grain overlay.
-Everything degrades gracefully: reduced-motion users and no-JS visitors get the full static site.
+**Motion layer (GSAP 3 + ScrollTrigger + SplitText + Lenis):** a hero where a gold pen traces
+the outline of her name before the letters fill in, then the photo rises behind the name on
+scroll while the name splits apart (difference-blended over the photo), a scroll-driven marquee of her actual route
+(Podgorica → London → Miami, with years), a word-by-word lit statement, a pinned horizontal
+experience track, an ink → bone theme flip on the Skills section, a blend-mode cursor and
+magnetic buttons. Everything degrades gracefully: reduced-motion users and no-JS visitors get
+the full static site.
+
+**Copy rule:** every line on the page is a fact from the CV. No numbered sections, no invented
+stats or taglines, no decorative glyphs.
 
 Built with [Vite](https://vitejs.dev) — npm-managed, no framework.
 
@@ -32,10 +35,14 @@ npm run build    # production build → dist/
 npm run preview  # sanity-check the build locally
 ```
 
-- **Netlify (easiest):** drag the `dist/` folder onto <https://app.netlify.com/drop>,
-  or connect the repo (build command `npm run build`, publish directory `dist`).
-- **Vercel:** `npx vercel` — it auto-detects Vite.
-- **GitHub Pages:** build, then publish `dist/` (e.g. with the `actions/deploy-pages` workflow).
+- **Vercel (recommended):** import the repo at <https://vercel.com/new>. It auto-detects Vite
+  (build `npm run build`, output `dist`). `vercel.json` adds long-lived caching for the hashed
+  files in `/static`.
+- **Social preview & SEO URLs:** `og:image`, `og:url`, the canonical link and the JSON-LD block
+  use `%SITE_URL%`, filled in at build time by `vite.config.js`. On Vercel the production domain
+  (`*.vercel.app`) is used automatically. When the custom domain is live, add an environment
+  variable `SITE_URL=https://yourdomain.com` in the Vercel project settings and redeploy.
+  After deploying, check the card with the LinkedIn Post Inspector or opengraph.xyz.
 
 The output is fully static, so any static host works. Fonts load from Google Fonts.
 
@@ -44,29 +51,27 @@ The output is fully static, so any static host works. Fonts load from Google Fon
 ## Customising it
 
 ### 1. Swap Milena's portrait
-Replace `public/assets/portrait.jpg`. The crop inside the arch frame is tuned via
-`object-position` on `.portrait__frame img` in `styles.css`.
+Replace `public/assets/portrait.jpg`. The crop is `object-position` on `.hero__media img` in
+`styles.css`.
 
 ### 2. Add work / project images
-Drop images into `public/assets/`, then in the `#work` section replace each `.ph`
-placeholder block with:
+The Work section is commented out in `index.html` until real images exist. Drop images into
+`public/assets/`, uncomment the `#work` block, fill in one `<figure>` per image, and add "Work"
+back to both navs. `initWork()` in `main.js` picks it up automatically.
 
-```html
-<img src="assets/work-1.jpg" alt="Short description of the project" />
-```
-
-You can delete the `.gallery__note` line once real images are in.
 
 ### 3. Edit text
-All copy lives directly in `index.html` — experience bullets, education, skills levels
-(`data-level="92"`), language dots (add/remove `<span class="lang__dot on">`), etc.
+All copy lives directly in `index.html`: experience, skills rows, education, languages, etc.
 
 ### 4. Change colours or fonts
-All design tokens are at the top of `styles.css` under `:root` (e.g. `--rose-500`, `--plum-900`,
-`--gold`). Change them in one place and the whole site updates. Fonts are set via `--font-display`
+All design tokens are at the top of `styles.css` under `:root` (e.g. `--ink`, `--bone`, `--gold`). Change them in one place and the whole site updates. Fonts are set via `--font-display`
 and `--font-body`.
 
-### 5. CV download
+### 5. Favicon & social image
+`public/favicon-32.png`, `public/apple-touch-icon.png`, `public/icon-512.png` (gold Bodoni "M" on ink)
+and `public/assets/og.jpg` (1200×630 share card). Replace them as a set if the brand changes.
+
+### 6. CV download
 The "Download CV" buttons link to `assets/Milena-Spajic-CV.pdf`. Replace
 `public/assets/Milena-Spajic-CV.pdf` to update it.
 
@@ -75,18 +80,20 @@ The "Download CV" buttons link to `assets/Milena-Spajic-CV.pdf`. Replace
 ## Project structure
 
 ```
-index.html        — the page (all content + inlined SVG flower sprite, hero rose & timeline vine)
+index.html        — the page (all content)
 styles.css        — design system + all section styles (tokens in :root)
-main.js           — GSAP/ScrollTrigger/SplitText/Lenis animation (ES module, imports from npm)
+main.js           — GSAP/ScrollTrigger/SplitText/Lenis motion layer (ES module, imports from npm)
 package.json      — npm scripts (dev / build / preview) + dependencies (gsap, lenis, vite)
+vite.config.js    — build tweaks + %SITE_URL% replacement for absolute social/SEO URLs
+vercel.json       — cache headers for hashed build files
 public/assets/
   portrait.jpg
   Milena-Spajic-CV.pdf
-  flowers/        — the 8 hand-crafted botanical SVGs (also inlined in the page)
+  flowers/        — botanical SVGs from the previous floral design (unused now)
 ```
 
 ## Accessibility & performance notes
 - Respects `prefers-reduced-motion` — animations disable and all content shows statically.
 - Works with JavaScript disabled (content is fully visible; only the motion is lost).
 - Keyboard-navigable with visible focus states and a skip link.
-- SVG vector flowers (crisp at any size, tiny file weight).
+- Custom cursor only on fine pointers; horizontal career scroll only on screens ≥ 961px.
